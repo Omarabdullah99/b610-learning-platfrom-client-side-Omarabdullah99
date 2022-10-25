@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import './Header.css'
 const Header = () => {
+    const {user}=useContext(AuthContext)
     return (
        <div className=' bg-gray-500 py-5'>
        
@@ -18,6 +20,7 @@ const Header = () => {
        <Link to='/courses'><li>Courses</li></Link>
        <Link to='/register'><li>Register</li></Link>
       <Link to='/login'> <li>Login</li></Link>
+      <p>{user.displayName}</p>
        </ul>
        </div>
 
