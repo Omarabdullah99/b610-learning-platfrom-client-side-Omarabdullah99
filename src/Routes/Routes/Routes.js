@@ -6,6 +6,7 @@ import Main from "../../layout/Main";
 import Login from "../../component/Login/Login";
 import Register from "../../component/Register/Register";
 import CourseDetails from "../../component/CourseDetails/CourseDetails";
+import Checkout from "../../component/Checkout/Checkout";
 
 export const routes=createBrowserRouter([
     {
@@ -34,6 +35,11 @@ export const routes=createBrowserRouter([
             {
                 path:'register',
                 element:<Register></Register>
+            },
+            {
+                path:'/checkout/:id',
+                element:<Checkout></Checkout>,
+                loader:({params})=>fetch(`http://localhost:4000/course/${params.id}`)
             }
         ]
     }
