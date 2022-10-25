@@ -21,12 +21,12 @@ export const routes=createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses></Courses>,
-                loader:()=>fetch('http://localhost:4000/courses')
+                loader:()=>fetch('https://module-60-newsportal-express-server.vercel.app/courses')
             },
             {
               path:'/course/:id',
               element:<CourseDetails></CourseDetails>,
-              loader:({params})=> fetch(`http://localhost:4000/course/${params.id}`)
+              loader:({params})=> fetch(`https://module-60-newsportal-express-server.vercel.app/course/${params.id}`)
             },
             {
                 path:'login',
@@ -39,7 +39,7 @@ export const routes=createBrowserRouter([
             {
                 path:'/checkout/:id',
                 element:<Checkout></Checkout>,
-                loader:({params})=>fetch(`http://localhost:4000/course/${params.id}`)
+                loader:({params})=>fetch(`https://module-60-newsportal-express-server.vercel.app/course/${params.id}`)
             }
         ]
     }
