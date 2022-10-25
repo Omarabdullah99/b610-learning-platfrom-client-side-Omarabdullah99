@@ -15,6 +15,7 @@ const Header = () => {
        <div className='right'>
        <ul className=' lg:flex'>
        <Link to='/'><li>Home</li></Link>
+       <Link to='/courses'><li>Courses</li></Link>
        <Link to='/register'><li>Register</li></Link>
       <Link to='/login'> <li>Login</li></Link>
        </ul>
