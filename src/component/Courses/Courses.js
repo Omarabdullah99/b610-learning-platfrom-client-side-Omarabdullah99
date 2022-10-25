@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import CourseCard from '../CourseCard/CourseCard';
 
 const Courses = () => {
@@ -11,7 +11,7 @@ const Courses = () => {
         <div>
         {
             courses.map(couse=>{
-                return <p key={couse.id} className='my-10'>{couse.title} </p>
+                return <Link to={`/course/${couse.id}`}><p  key={couse.id} className='my-10'>{couse.title} </p></Link>
             })
          }
         </div>
