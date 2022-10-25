@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CourseCard = ({course}) => {
     console.log(course)
@@ -8,7 +9,7 @@ const CourseCard = ({course}) => {
         <p className='text-xl font-bold'>{title}</p>
         <img className='w-60' src={image} alt="" />
         <p>{description}</p>
-        <button  className='btn-primary py-2 px-5 rounded mt-5'>Details Course</button>
+        <Link to={`/course/${id}`}><button  className='btn-primary py-2 px-5 rounded mt-5'>Details Course</button></Link>
             
         </div>
     );
