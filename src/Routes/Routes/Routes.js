@@ -7,6 +7,8 @@ import Login from "../../component/Login/Login";
 import Register from "../../component/Register/Register";
 import CourseDetails from "../../component/CourseDetails/CourseDetails";
 import Checkout from "../../component/Checkout/Checkout";
+import Navber from "../../component/Navber/Navber";
+
 
 export const routes=createBrowserRouter([
     {
@@ -41,6 +43,8 @@ export const routes=createBrowserRouter([
                 element:<Checkout></Checkout>,
                 loader:({params})=>fetch(`https://module-60-newsportal-express-server.vercel.app/course/${params.id}`)
             }
+           
+        
         ]
     }
 ])

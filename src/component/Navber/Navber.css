@@ -1,0 +1,19 @@
+.lala{
+    /* display: flex;
+    flex-direction: column; */
+    width: 100%;
+    border-top: 1pxsolid #fff;
+    position: absolute;
+    /* top: 80px; */
+    left: -100%;
+    /* opacity: 1; */
+    transition: all 0.5s ease-out;}
+.lalu{
+    /* background: #1f5156; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* opacity: 1; */
+    transition: all 0.3s ease-in;
+    z-index: 1;
+}

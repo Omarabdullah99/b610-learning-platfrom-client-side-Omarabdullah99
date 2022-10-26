@@ -36,12 +36,15 @@ const Header = () => {
         <>
         <Link to='/register'><li>Register</li></Link>
       <Link to='/login'> <li>Login</li></Link>
+      <img  src="" alt="" />
+      <div ></div>
+     
         </>
        }
 
        {
         user?.photoURL ?
-        <img  className='w-20 rounded-full'  src={user.photoURL} alt="" />
+        <div  ><img    className='w-20 rounded-full'  src={user.photoURL} alt="" /></div>
         :
         <h1 className='text-3xl font-bold'><FiLogIn></FiLogIn></h1>
        }
