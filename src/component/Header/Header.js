@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import './Header.css'
 import {  FiLogIn} from 'react-icons/fi';
+
 const Header = () => {
     const {user,logOut}=useContext(AuthContext)
+    console.log(user)
+
+
+    
     const handleLogOut=()=>{
         logOut()
         .then(()=> {})
@@ -28,23 +33,26 @@ const Header = () => {
 
        {
         user?.uid ?
-        <>
+        <div>
         <button className='text-xl' onClick={handleLogOut} >Logout</button>
         
-        </>
+        </div>
         :
-        <>
+        <div>
         <Link to='/register'><li>Register</li></Link>
       <Link to='/login'> <li>Login</li></Link>
       <img  src="" alt="" />
       <div ></div>
      
-        </>
+        </div>
        }
 
        {
         user?.photoURL ?
-        <div  ><img    className='w-20 rounded-full'  src={user.photoURL} alt="" /></div>
+        <div className="tooltip" data-tip="hello" >
+        <img   className='w-10 text-5xl text-red-500 rounded-full'  src={user.photoURL} alt=""  title="mammals" />
+        
+        </div>
         :
         <h1 className='text-3xl font-bold'><FiLogIn></FiLogIn></h1>
        }

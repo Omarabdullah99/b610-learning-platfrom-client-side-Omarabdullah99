@@ -53,7 +53,7 @@ const Navbertwo = () => {
 
         {
             user?.photoURL ?
-            <div  ><img    className='w-20 rounded-full'  src={user.photoURL} alt="" /></div>
+            <div ><img    className='w-20 rounded-full'  src={user.photoURL} alt="" title={user?.displayName} /></div>
             :
             <h1 className='text-xl md:text-3xl font-bold'><FiLogIn></FiLogIn></h1>
         }

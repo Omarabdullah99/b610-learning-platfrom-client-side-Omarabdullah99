@@ -37,6 +37,7 @@ const CourseDetails = () => {
       {({ toPdf }) => <h1 className="text-5xl font-bold"><HiFolderDownload onClick={toPdf}></HiFolderDownload></h1>}
     </Pdf>
       </div>
+    
     </div>
   );
 };
