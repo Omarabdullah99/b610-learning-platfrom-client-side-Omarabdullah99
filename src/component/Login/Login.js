@@ -1,11 +1,23 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBeer,FaGoogle,FaGithub } from "react-icons/fa";
+import { FaGoogle,FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-  const {logIn}=useContext(AuthContext)
+  const provider = new GoogleAuthProvider();
+  const {logIn,googleSignIn}=useContext(AuthContext)
   const [error,setError]=useState('')
+
+
+  const handleGoogleSignIn =()=>{
+    googleSignIn(provider)
+    .then(result =>{
+      const user=result.user;
+      console.log(user)
+    })
+    .cathc(error => console.error(error))
+  }
 
     const handleSubmit=(event)=>{
         event.preventDefault()
@@ -31,10 +43,10 @@ const Login = () => {
           setError(errorMessage)
         });
 
-
     }
+
     return (
-        <div className="hero min-h-screen bg-base-200 ">
+        <div className="hero min-h-screen bg-base-200  ">
   <div className="hero-content flex-col ">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Login now!</h1>
@@ -61,11 +73,11 @@ const Login = () => {
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
-          
         </div>
       </form>
-      <button className='btn btn-primary mt-5'>Sign In Google <span className='ml-5 text-xl'><FaGoogle></FaGoogle></span> </button>
-          <button className='btn btn-primary mt-5'>Sign In  GitHub <span className='text-xl ml-5'><FaGithub></FaGithub> </span> </button>
+      <button onClick={handleGoogleSignIn} className='btn btn-primary mt-5 w-9/12 mx-auto'>Sign In Google <span className='ml-5 text-xl'><FaGoogle></FaGoogle></span> </button>
+      <button className='btn btn-primary mt-5 w-9/12 mx-auto'>Sign In  GitHub <span className='text-xl ml-5'><FaGithub></FaGithub> </span> </button>
+      
     </div>
   </div>
 </div>

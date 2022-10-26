@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {AuthContext} from '../../Contexts/AuthProvider/AuthProvider'
 import {  FiLogIn} from 'react-icons/fi';
+import { HiAcademicCap } from "react-icons/hi";
+import { VscAccount } from "react-icons/vsc";
 
 const Navbertwo = () => {
     const {user,logOut}=useContext(AuthContext)
@@ -12,28 +14,28 @@ const Navbertwo = () => {
         .catch(error => console.log(error))
     }
     return (
-        <div>
+        <div >
         <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2  shadow bg-base-100 rounded-box w-52">
               <Link to='/'><li>Home</li></Link>
               <Link to='/courses'><li>Courses</li></Link>
               <Link><li>Blog</li></Link>
               <Link><li>FAQ</li></Link>
             </ul>
           </div>
-          <h1>Growup Knowlage</h1>
+          <h1 className='text-sm md:text-2xl font-bold font-it flex items-center'>Get Your Courses.com <span className='ml-0 md:ml-5'> <HiAcademicCap></HiAcademicCap> </span> </h1>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
+        <div className="navbar-center  hidden lg:flex">
+          <ul className="menu menu-horizontal text-xl ">
             <Link to='/'><li>Home</li></Link>
-            <Link to='/courses'><li>Courses</li></Link>
+            <Link to='/courses'><li className='px-2'>Courses</li></Link>
            <Link> <li>Blog </li></Link>
-           <Link> <li>FAQ </li></Link>
+           <Link> <li className='px-2'>FAQ </li></Link>
           </ul>
         </div>
         
@@ -53,9 +55,9 @@ const Navbertwo = () => {
 
         {
             user?.photoURL ?
-            <div ><img    className='w-20 rounded-full'  src={user.photoURL} alt="" title={user?.displayName} /></div>
+            <div ><img    className='w-20 rounded-full'  src={user?.photoURL} alt="" title={user?.displayName} /></div>
             :
-            <h1 className='text-xl md:text-3xl font-bold'><FiLogIn></FiLogIn></h1>
+            <h1 className='text-xl md:text-3xl font-bold'> <VscAccount ></VscAccount > </h1>
         }
 
         <div className='bg-[#e3e1e1] w-[38px] md:w-[65px] h-[20px] md:h-[30px] rounded-[18px] md:rounded-[40px] relative'>
