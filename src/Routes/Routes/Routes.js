@@ -8,6 +8,7 @@ import Register from "../../component/Register/Register";
 import CourseDetails from "../../component/CourseDetails/CourseDetails";
 import Checkout from "../../component/Checkout/Checkout";
 import Navber from "../../component/Navber/Navber";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 export const routes=createBrowserRouter([
@@ -40,7 +41,7 @@ export const routes=createBrowserRouter([
             },
             {
                 path:'/checkout/:id',
-                element:<Checkout></Checkout>,
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute> ,
                 loader:({params})=>fetch(`https://module-60-newsportal-express-server.vercel.app/course/${params.id}`)
             }
            

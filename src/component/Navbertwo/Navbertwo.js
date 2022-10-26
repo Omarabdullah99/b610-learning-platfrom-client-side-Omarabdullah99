@@ -28,7 +28,7 @@ const Navbertwo = () => {
               <Link><li>FAQ</li></Link>
             </ul>
           </div>
-          <h1 className='text-sm md:text-2xl font-bold font-it flex items-center'>Get Your Courses.com <span className='ml-0 md:ml-5'> <HiAcademicCap></HiAcademicCap> </span> </h1>
+          <Link to='/'><h1 className='text-sm md:text-2xl font-bold font-it flex items-center'>Get Your Courses.com <span className='ml-0 md:ml-5'> <HiAcademicCap></HiAcademicCap> </span> </h1></Link>
         </div>
         <div className="navbar-center  hidden lg:flex">
           <ul className="menu menu-horizontal text-xl ">
