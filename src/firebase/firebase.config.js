@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCtKOuWhcUe-YTp5xwG_1T-ah1IJWiZj4g",
-  authDomain: "growup-skill.firebaseapp.com",
-  projectId: "growup-skill",
-  storageBucket: "growup-skill.appspot.com",
-  messagingSenderId: "147673008193",
-  appId: "1:147673008193:web:fd1a1676b4ee33288e5ec0"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle,FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
-  const {logIn,googleSignIn}=useContext(AuthContext)
+  const githubProvider= new GithubAuthProvider()
+  const {logIn,googleSignIn,gitHubSignIn}=useContext(AuthContext)
   const [error,setError]=useState('')
 
   const navigate=useNavigate()
@@ -23,6 +24,18 @@ const Login = () => {
       navigate(from, {replace:true})
     })
     .cathc(error => console.error(error))
+  }
+
+  const handleGithub=()=>{
+    gitHubSignIn(githubProvider)
+    .then(result =>{
+      const user=result.user;
+      console.log(user)
+      navigate(from, {replace:true})
+    })
+    .cathc(error => console.error(error))
+    
+    
   }
 
     const handleSubmit=(event)=>{
@@ -74,7 +87,7 @@ const Login = () => {
           </label>
           <input type="password" name='password' placeholder="password" className="input input-bordered" required />
           <label className="label">
-            <Link to='/register' className="label-text-alt link link-hover">If you have no account?Register Here</Link>
+            <Link to='/register' className="label-text-alt link link-hover ">If you have no account?Register Here</Link>
           </label>
           
         </div>
@@ -83,7 +96,7 @@ const Login = () => {
         </div>
       </form>
       <button onClick={handleGoogleSignIn} className='btn btn-primary mt-5 w-9/12 mx-auto'>Sign In Google <span className='ml-5 text-xl'><FaGoogle></FaGoogle></span> </button>
-      <button className='btn btn-primary mt-5 w-9/12 mx-auto'>Sign In  GitHub <span className='text-xl ml-5'><FaGithub></FaGithub> </span> </button>
+      <button onClick={handleGithub} className='btn btn-primary mt-5 w-9/12 mx-auto'>Sign In  GitHub <span className='text-xl ml-5'><FaGithub></FaGithub> </span> </button>
       
     </div>
   </div>

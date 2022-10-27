@@ -24,8 +24,8 @@ const Navbertwo = () => {
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2  shadow bg-base-100 rounded-box w-52">
               <Link to='/'><li>Home</li></Link>
               <Link to='/courses'><li>Courses</li></Link>
-              <Link><li>Blog</li></Link>
-              <Link><li>FAQ</li></Link>
+              <Link to='/blog'><li>Blog</li></Link>
+              <Link to='faq'><li>FAQ</li></Link>
             </ul>
           </div>
           <Link to='/'><h1 className='text-sm md:text-2xl font-bold font-it flex items-center'>Get Your Courses.com <span className='ml-0 md:ml-5'> <HiAcademicCap></HiAcademicCap> </span> </h1></Link>
@@ -34,8 +34,8 @@ const Navbertwo = () => {
           <ul className="menu menu-horizontal text-xl ">
             <Link to='/'><li>Home</li></Link>
             <Link to='/courses'><li className='px-2'>Courses</li></Link>
-           <Link> <li>Blog </li></Link>
-           <Link> <li className='px-2'>FAQ </li></Link>
+           <Link to='/blog'> <li>Blog </li></Link>
+           <Link to='faq'> <li className='px-2'>FAQ </li></Link>
           </ul>
         </div>
         

@@ -76,7 +76,7 @@ const Register = () => {
 
       <div className="form-control">
       <label className="label">
-        <span className="label-text"> Name</span>
+        <span className="label-text"> Full Name</span>
       </label>
       <input onBlur={handelName} type="text" name='name' placeholder="user name" className="input input-bordered" required />
     </div>
