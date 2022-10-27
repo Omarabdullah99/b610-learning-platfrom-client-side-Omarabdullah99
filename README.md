@@ -9,12 +9,12 @@ Hosted in Firebase> https://growup-skill.web.app/
 
 
 ### Requirement
-Firebase
-Vercel
-React Icon
-Tailwind
-Daisiui
-React-router-dom
+Firebase <br />
+Vercel<br />
+React Icon<br />
+Tailwind<br />
+Daisiui<br />
+React-router-dom<br />
 
 
 ### Get Your Courses.com Web site Information
